@@ -4,3 +4,33 @@
   padding: 2rem;
   text-align: center;
 }
+
+body {
+  background-color: darkslategray;
+  color: white;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.tabs-header {
+  display: flex;
+}
+
+.tabs {
+  padding: 5px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.form {
+  padding: 5px;
+  border: 1px solid grey;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
