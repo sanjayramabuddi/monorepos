@@ -1,6 +1,5 @@
 import { useState } from "react";
 import OtpInput from "./OtpInput";
-import "./component.css";
 
 export default function OtpLoginForm() {
   const [phoneNumber, setPhoneNumber] = useState("");

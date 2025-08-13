@@ -10,12 +10,12 @@ export const Interests = ({ formData, setFormData, error }) => {
   ];
 
   function handleInterest(e) {
-    const { checked, name } = e.target;
+    const { checked, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       interests: checked
-        ? [...prev.interests, name]
-        : prev.interests.filter((p) => p !== name),
+        ? [...prev.interests, value]
+        : prev.interests.filter((p) => p !== value),
     }));
   }
 
@@ -26,7 +26,8 @@ export const Interests = ({ formData, setFormData, error }) => {
           <label>
             <input
               type="checkbox"
-              name={option}
+              name="interests"
+              value={option}
               checked={interests.includes(option)}
               onChange={handleInterest}
             />

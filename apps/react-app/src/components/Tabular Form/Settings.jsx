@@ -2,7 +2,7 @@ export const Settings = ({ formData, setFormData }) => {
   const { theme } = formData;
 
   function handleTheme(e) {
-    setFormData((prev) => ({ ...prev, theme: e.target.name }));
+    setFormData((prev) => ({ ...prev, theme: e.target.value }));
   }
 
   return (
@@ -11,9 +11,10 @@ export const Settings = ({ formData, setFormData }) => {
         <label>
           <input
             type="radio"
-            name="light"
+            name="theme"
+            value="light"
             checked={theme === "light"}
-            onChange={(e) => handleTheme(e)}
+            onChange={handleTheme}
           />
           Light
         </label>
@@ -22,9 +23,10 @@ export const Settings = ({ formData, setFormData }) => {
         <label>
           <input
             type="radio"
-            name="dark"
+            name="theme"
+            value="dark"
             checked={theme === "dark"}
-            onChange={(e) => handleTheme(e)}
+            onChange={handleTheme}
           />
           Dark
         </label>

@@ -35,7 +35,7 @@ export const TabForm = () => {
       component: Interests,
       validate: () => {
         const err = {};
-        if (!formData.interests.length < 1) err.interest = "Select atleast one";
+        if (formData.interests.length < 1) err.interest = "Select at least one";
         setError(err);
         return err.interest ? false : true;
       },
@@ -43,14 +43,14 @@ export const TabForm = () => {
     {
       name: "Settings",
       component: Settings,
-      validate: () => {
-        return true;
-      },
+      validate: () => true,
     },
   ];
   const ActiveTabComp = configTab[active].component;
 
   function changeTab(index) {
+    if (index > active && !configTab[active].validate()) return;
+    setError({});
     setActive(index);
   }
 
@@ -59,7 +59,7 @@ export const TabForm = () => {
   }
 
   function handlePrev() {
-    if (configTab[active].validate()) setActive((prev) => prev - 1);
+    setActive((prev) => prev - 1);
   }
 
   function handleSubmit() {
